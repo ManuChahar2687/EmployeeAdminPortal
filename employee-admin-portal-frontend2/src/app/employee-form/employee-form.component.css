@@ -1,0 +1,107 @@
+/* .container {
+  position:inherit;
+} */
+
+#heading {
+  margin-top: 50px;
+  margin-left: 45%;
+  font-weight: bold;
+}
+
+#labelNameHeadings {
+  font-weight: bold;
+}
+
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .form-group {
+    flex: 1 1 45%; 
+    margin-right: 10px;
+  }
+
+  .form-group label {
+    display: block;
+  }
+
+  .form-group input {
+    width: 100%;
+  }
+
+  .form-group.full-width {
+    flex: 1 1 100%;
+  }
+  
+  .meeting-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .meeting-group {
+    flex: 1 1 30%; 
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .meeting-group label {
+    display: block;
+  }
+
+  .meeting-group input {
+    width: 100%;
+  }
+
+  .department-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .department-group {
+    flex: 1 1 30%; 
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .department-group label {
+    display: block;
+  }
+
+  .department-group input {
+    width: 100%;
+  }
+
+
+  .address-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .address-group {
+    flex: 1 1 30%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .address-group label {
+    display: block;
+  }
+
+  .address-group input {
+    width: 100%;
+  }
+
+  #saveButton {
+    margin-left: 45%;
+    width: 150px;
+  }
+
+  input.ng-invalid.ng-touched {
+    border: red 1px solid;
+  }
+  .alert {
+    color: red;
+  }
+

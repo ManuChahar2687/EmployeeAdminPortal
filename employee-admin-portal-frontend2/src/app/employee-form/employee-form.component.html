@@ -1,0 +1,164 @@
+<div class="container">
+   <h5 id="heading">Employee Form</h5><br>
+
+   <form (ngSubmit)="!employeeForm.invalid && saveEmployee()" #employeeForm="ngForm">
+      <div class="form-container">
+         <fieldset class="form-group" *ngIf="employee">
+            <label id="labelNameHeadings">Id</label>
+            <input type="text" #empId="ngModel" [(ngModel)]="employee.empId" class="form-control form-control-sm"
+               name="empId" disabled>
+         </fieldset>
+
+         <fieldset class="form-group" *ngIf="employee">
+            <label id="labelNameHeadings">Name</label>
+            <input type="text" #name="ngModel" [(ngModel)]="employee.name" class="form-control form-control-sm"
+               name="name" required minlength="4">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+               <div *ngIf="name.hasError('required')">
+                  Name is required
+               </div>
+               <div *ngIf="name.hasError('minlength')">
+                  Name must be at least 4 characters long
+               </div>
+            </div>
+         </fieldset>
+
+         
+
+         <fieldset class="form-group" *ngIf="employee">
+            <label id="labelNameHeadings">email</label>
+            <input type="text" #email="ngModel" [(ngModel)]="employee.email" class="form-control form-control-sm"
+               name="email">
+            <!-- required="required"> -->
+         </fieldset>
+
+         <fieldset class="form-group" *ngIf="employee">
+            <label id="labelNameHeadings">Phone Number</label>
+            <input type="text" #phoneNumber="ngModel" [(ngModel)]="employee.phoneNumber" class="form-control form-control-sm"
+               name="phoneNumber">
+            <!-- required="required"> -->
+         </fieldset>
+
+         <fieldset class="form-group" *ngIf="employee">
+            <label id="labelNameHeadings">Set Password</label>
+            <input type="password" #password="ngModel" [(ngModel)]="employee.password" class="form-control form-control-sm"
+               name="password" required minlength="4">
+               <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert">
+                  <div *ngIf="password.hasError('required')">
+                     Password is required
+                  </div>
+                  <div *ngIf="password.hasError('minlength')">
+                     Password must be at least 4 characters long
+                  </div>
+               </div>
+            <!-- required="required"> -->
+         </fieldset>
+
+         <fieldset class="form-group full-width" *ngIf="employee">
+            <!-- <label>Department</label> -->
+            <div class="department-container">
+               <fieldset class="department-group">
+                  <label id="labelNameHeadings">Department Name</label>
+                  <input type="text" #depName="ngModel" [(ngModel)]="department.depName"
+                     class="form-control form-control-sm" name="depName">
+               </fieldset>
+            </div>
+         </fieldset>
+
+
+         <fieldset class="form-group full-width" *ngIf="employee">
+            <!-- <label>Department</label> -->
+            <div class="role-container">
+               <fieldset class="role-group">
+                  <label id="labelNameHeadings">Role</label>
+                  <input type="text" #role_name="ngModel" [(ngModel)]="role.role_name"
+                     class="form-control form-control-sm" name="role_name" appRoleValidator required>
+                     <div *ngIf="role_name.invalid && (role_name.dirty || role_name.touched)" class="alert">
+                        <div *ngIf="role_name.errors?.['required']">
+                           Role is required
+                        </div>
+                        <div *ngIf="role_name.errors?.['invalidRole']">
+                           Role can either be 'ADMIN' or 'USER'
+                        </div>
+                     </div>
+                  </fieldset>
+            </div>
+         </fieldset>
+
+
+
+
+         <fieldset class="form-group full-width" *ngIf="employee">
+            <label id="labelNameHeadings">Address</label>
+            <div class="address-container">
+               <!-- <fieldset class="address-group">
+                  <label>Address Id</label>
+                  <input type="text" #addressId="ngModel" [(ngModel)]="address.addressId"
+                     class="form-control form-control-sm" disabled name="addressId">
+               </fieldset> -->
+               <fieldset class="address-group">
+                  <label>House Number</label>
+                  <input type="text" #houseNumber="ngModel" [(ngModel)]="address.houseNumber"
+                     class="form-control form-control-sm" name="houseNumber">
+               </fieldset>
+               <fieldset class="address-group">
+                  <label>Street</label>
+                  <input type="text" #streetName="ngModel" [(ngModel)]="address.streetName"
+                     class="form-control form-control-sm" name="streetName">
+               </fieldset>
+               <fieldset class="address-group">
+                  <label>City</label>
+                  <input type="text" #city="ngModel" [(ngModel)]="address.city" class="form-control form-control-sm"
+                     name="city">
+               </fieldset>
+               <fieldset class="address-group">
+                  <label>Zip</label>
+                  <input type="text" #zip="ngModel" [(ngModel)]="address.zip" class="form-control form-control-sm"
+                     name="zip">
+               </fieldset>
+               <fieldset class="address-group">
+                  <label>Country</label>
+                  <input type="text" #country="ngModel" [(ngModel)]="address.country"
+                     class="form-control form-control-sm" name="country">
+               </fieldset>
+            </div>
+         </fieldset>
+
+
+         <fieldset class="form-group full-width" *ngIf="employee">
+            <label id="labelNameHeadings">Meetings</label>
+            <div class="meeting-container">
+               <!-- <fieldset class="meeting-group">
+                  <label>Meeting Id</label>
+                  <input type="text" #meetingId="ngModel" [(ngModel)]="meeting.meetingId"
+                     class="form-control form-control-sm" disabled name="meetingId">
+               </fieldset> -->
+               <fieldset class="meeting-group">
+                  <label>Title</label>
+                  <input type="text" #meetingTitle="ngModel" [(ngModel)]="meeting.meetingTitle"
+                     class="form-control form-control-sm" name="meetingTitle">
+               </fieldset>
+               <fieldset class="meeting-group">
+                  <label>Description</label>
+                  <input type="text" #meetingDescription="ngModel" [(ngModel)]="meeting.meetingDescription"
+                     class="form-control form-control-sm" name="meetingDescription">
+               </fieldset>
+               <fieldset class="meeting-group">
+                  <label>Location</label>
+                  <input type="text" #meetingLocation="ngModel" [(ngModel)]="meeting.meetingLocation" class="form-control form-control-sm"
+                     name="meetingLocation">
+               </fieldset>
+               <fieldset class="meeting-group">
+                  <label>Time</label>
+                  <input type="text" #meetingTime="ngModel" [(ngModel)]="meeting.meetingTime" class="form-control form-control-sm"
+                     name="meetingTime">
+               </fieldset>
+            </div>
+         </fieldset>
+
+
+         <button [disabled]="employeeForm.invalid" type="submit" class="btn btn-success" id="saveButton">Save</button>
+
+      </div>
+   </form>
+</div>

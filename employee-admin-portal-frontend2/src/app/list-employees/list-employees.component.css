@@ -1,0 +1,23 @@
+.container {
+    /* position: relative; */
+}
+
+.heading {
+    margin-top: 50px;
+    /* margin-bottom: 20px; */
+    /* position: absolute; */
+    margin-left: 40%;
+}
+
+#addButton {
+    margin-left: 85%;
+}
+
+
+.table-responsive {
+    margin-top: 30px;
+}
+
+li {
+    list-style-type: none;
+}

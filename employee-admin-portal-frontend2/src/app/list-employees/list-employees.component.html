@@ -1,0 +1,58 @@
+<div class="container">
+
+  <div class="heading">
+    <h4>List of Employees</h4>
+  </div><br><br>
+  <button (click)="addEmployee()" class="btn btn-success" id="addButton">Add Employee</button>
+
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Address</th>
+          <th>Department</th>
+          <th>Meetings</th>
+          <!-- <th>Update</th> -->
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of employee">
+          <td>{{emp.empId}}</td>
+          <td>{{emp.name}}</td>
+          <td>{{emp.email}}</td>
+          <td>{{emp.phoneNumber}}</td>
+          <td>
+            <ul  *ngFor="let adr of emp.addresses">
+              <li>{{adr.houseNumber}}</li>
+              <li>{{adr.streetName}}</li>
+              <li>{{adr.city}}</li>
+              <li>{{adr.zip}}</li>
+            </ul>
+          </td>
+          <td>
+            <ul  *ngFor="let dep of emp.department">
+              <li>{{dep.depName}}</li>
+            </ul>
+          </td>
+          <td>
+            <ul  *ngFor="let meet of emp.meetings">
+              <li>{{meet.meetingTitle}}</li>
+              <li>{{meet.meetingDescription}}</li>
+              <li>{{meet.meetingTime}}</li>
+              <li>{{meet.meetingLocation}}</li>
+            </ul>
+          </td>
+          <!-- <td><button (click)="updateEmployee(emp.empId)" class="btn btn-warning">Update</button></td> -->
+          <td><button (click)="deleteEmployee(emp.empId)" class="btn btn-danger">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

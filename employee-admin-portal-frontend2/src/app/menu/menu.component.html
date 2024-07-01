@@ -1,0 +1,15 @@
+<div class="container">
+    
+    <div class="sidebar">
+        <a [routerLink]="['home']">Home</a><br>
+        <a [routerLink]="['employee']">Employees List</a><br>
+        <a [routerLink]="['employee/-1']">Add Employee</a><br>
+        <a [routerLink]="['home']">Meetings</a><br>
+        <a [routerLink]="['home']">Logout</a><br>
+    </div>
+
+    <div class="main-container">
+        <router-outlet></router-outlet>
+    </div>
+
+</div>

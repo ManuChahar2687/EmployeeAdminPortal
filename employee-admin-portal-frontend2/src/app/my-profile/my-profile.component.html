@@ -1,0 +1,130 @@
+<div class="container">
+    <div class="main-body">
+    
+          <!-- Breadcrumb -->
+          <!-- <nav aria-label="breadcrumb" class="main-breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
+              <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+            </ol>
+          </nav> -->
+          <!-- /Breadcrumb -->
+    
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                    <!-- <img src="/images/avatar.jpg" alt="Admin" class="rounded-circle" width="150"/> -->
+                    <div class="mt-3" *ngIf="employee">
+                      <h4 id="empname">{{employee.name}}</h4>
+                      <p class="text-secondary mb-1">{{employee.email}}</p>
+                      <p class="text-muted font-size-sm">{{employee.phoneNumber}}</p>
+                      <button class="btn btn-primary">Follow</button>
+                      <button class="btn btn-outline-primary">Message</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0" >Employee ID</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary" id="empId">
+                      {{employee.empId}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Full Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary" id="empName">
+                      {{employee.name}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary" id="empEmail">
+                      {{employee.email}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Phone</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{employee.phoneNumber}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Department</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{employee.department[0].depName}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Role</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary" id="empRole">
+                      {{employee.role[0].role_name}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Address</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <p>House: {{employee.addresses[0].houseNumber}}</p>
+                      <p>Street: {{employee.addresses[0].streetName}}</p>
+                      <p>City: {{employee.addresses[0].city}}</p>
+                      <p>Zip: {{employee.addresses[0].zip}}</p>
+                      <p>Country: {{employee.addresses[0].country}}</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Meeting</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <p>Meeting ID: {{employee.meetings[0].meetingId}}</p>
+                      <p>Title: {{employee.meetings[0].meetingTitle}}</p>
+                      <p>Description: {{employee.meetings[0].meetingDescription}}</p>
+                      <p>Location: {{employee.meetings[0].meetingLocation}}</p>
+                      <p>Time: {{employee.meetings[0].meetingTime}}</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <button class="btn btn-info " (click)="updateEmployee()" id="updateButton">Update Your Profile</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+            </div>
+          </div>
+
+        </div>
+    </div>

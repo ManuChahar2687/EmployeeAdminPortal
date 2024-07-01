@@ -1,0 +1,50 @@
+<!-- <div class="container">
+    username : <input type="text" name="username" [(ngModel)]="username">
+    password : <input type="password" name="password" [(ngModel)]="password">
+    
+    <p>{{this.message}}</p>
+</div> -->
+
+<div class="container">
+<form>
+    <!-- Email input -->
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="form2Example1">Username</label>
+        <input type="text" name="username" id="username" [(ngModel)]="username" class="form-control">
+    </div>
+
+    <!-- Password input -->
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="form2Example2">Password</label>
+        <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control">
+    </div>
+
+    <!-- 2 column grid layout for inline styling -->
+    <div class="row mb-4">
+        <div class="col d-flex justify-content-center">
+            <!-- Checkbox -->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                <label class="form-check-label" for="form2Example31"> Remember me </label>
+            </div>
+        </div>
+
+        <div class="col">
+            <!-- Simple link -->
+            <a href="#!">Forgot password?</a>
+        </div>
+    </div>
+
+    <!-- Submit button -->
+    <button type="button" (click)="handleLogin(username,password)" class="btn btn-primary btn-block mb-4">Sign In</button>
+    <!-- <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign
+        in</button> -->
+
+    <!-- Register buttons -->
+    <div class="text-center">
+        <!-- <p>Not a member? <a [routerLink]="['employee/-1']" >Register</a></p> -->
+        
+        <p>{{this.message}}</p>
+    </div>
+</form>
+</div>
